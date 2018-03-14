@@ -12,6 +12,7 @@ public class MyTriangle {
         int N = scan.nextInt();
         printStars(N);
         printStars2(N);
+        printStars3(N);
     }
 
     public static void printStars(int N) {
@@ -30,6 +31,18 @@ public class MyTriangle {
             }
             for (int i = 1; i <=2*k-1; i++) {
                 System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void printStars3(int N) {
+        for (int k = 1; k <=N; k++) {
+            for (int j = 1; j <=N-k; j++) {
+                System.out.print(" ");
+            }
+            for (int i = 1; i <=2*k-1; i++) {
+                System.out.print((char)('A'+(k-1)));
             }
             System.out.println();
         }
