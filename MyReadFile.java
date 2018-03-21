@@ -19,6 +19,9 @@ public class MyReadFile {
                 i++;
             }
             System.out.println(Arrays.toString(scores));
+            Arrays.sort(scores);
+            reverse(scores);
+            System.out.println(Arrays.toString(scores));
 //        System.out.print("請輸入一行字串: ");
 //        String line = scan.nextLine();
 //        System.out.printf("你輸入的是: %s\n", line);
@@ -26,6 +29,14 @@ public class MyReadFile {
 //        System.out.println(Arrays.toString(words));
         } catch (FileNotFoundException ex) {
             System.err.printf("File reading error: %s\n", ex.getMessage());
+        }
+    }
+
+    private static void reverse(int[] scores) {
+        for (int i = 0; i < scores.length/2; i++) {
+            int tmp = scores[i];
+            scores[i] = scores[scores.length-1-i];
+            scores[scores.length-1-i] = tmp;
         }
     }
 }
