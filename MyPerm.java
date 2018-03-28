@@ -7,21 +7,25 @@ import java.util.Arrays;
  */
 public class MyPerm {
     public static void main(String[] args) {
-        int [] a = {1, 2, 3, 4, 5, 6, 7};
-        perm(a, 0, a.length-1);
+        int [] a = {1, 2, 3, 4, 5, 6};
+        int n = perm(a, 0, a.length-1);
+        System.out.printf("總共有%d種排法.\n", n);
     }
 
     // k: index of the current position
     // m: index of the last position
-    private static void perm(int[] a, int k, int m) {
+    private static int perm(int[] a, int k, int m) {
         if (k == m) { // done
             System.out.println(Arrays.toString(a));
+            return 1;
         } else {
+            int s = 0;
             for (int i = k; i <=m; i++) {
                 myswap(a, i, k);
-                perm(a, k+1, m);
+                s += perm(a, k+1, m);
                 myswap(a, i, k);
             }
+            return s;
         }
     }
 
