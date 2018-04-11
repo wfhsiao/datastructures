@@ -24,9 +24,18 @@ public class StudentTest {
                 students[i] = new Student(tmps[0], tmps[1], Integer.valueOf(tmps[2]));
                 i++;
             }
-            print(students);
+            
+            Student.setCol(1);            
             Arrays.sort(students);
-            System.out.println("==========================================");
+            System.out.println("================依姓名==========================");
+            print(students);
+            Student.setCol(2);            
+            Arrays.sort(students);
+            System.out.println("================依年齡==========================");
+            print(students);
+            Student.setCol(0);            
+            Arrays.sort(students);
+            System.out.println("================依學號==========================");
             print(students);
         } catch (FileNotFoundException ex) {
             System.out.printf("檔案開啟失敗: %s\n", ex.getMessage());
