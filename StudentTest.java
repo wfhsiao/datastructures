@@ -1,9 +1,8 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -25,6 +24,9 @@ public class StudentTest {
                 students[i] = new Student(tmps[0], tmps[1], Integer.valueOf(tmps[2]));
                 i++;
             }
+            print(students);
+            Arrays.sort(students);
+            System.out.println("==========================================");
             print(students);
         } catch (FileNotFoundException ex) {
             System.out.printf("檔案開啟失敗: %s\n", ex.getMessage());
