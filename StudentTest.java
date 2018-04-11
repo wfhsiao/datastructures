@@ -1,10 +1,40 @@
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author user
  */
 public class StudentTest {
     public static void main(String[] args) {
-        Student s = new Student("106406001", "張三", 20);
-        System.out.printf("s=%s\n", s);
+        try {
+            //        Student s = new Student("106406001", "張三", 20);
+//        System.out.printf("s=%s\n", s);
+            File f = new File("20160330students.txt");
+            Scanner s = new Scanner(f);
+            Student students[] = new Student [68];
+            int i = 0;
+            s.nextLine(); // 跳過標題行
+            while (s.hasNextLine()) {
+                String line = s.nextLine();
+                String tmps[] = line.split("\\t");
+                students[i] = new Student(tmps[0], tmps[1], Integer.valueOf(tmps[2]));
+                i++;
+            }
+            print(students);
+        } catch (FileNotFoundException ex) {
+            System.out.printf("檔案開啟失敗: %s\n", ex.getMessage());
+        }
+
+    }
+
+    private static void print(Student[] students) {
+        for (Student s : students) {
+            System.out.println(s);
+        }
     }
 }
