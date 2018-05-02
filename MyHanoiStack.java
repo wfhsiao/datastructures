@@ -16,16 +16,17 @@ public class MyHanoiStack {
         int N = 4;
         init(stacks[0], N);
         print(stacks);
-//        hanoi(3, "來源", "輔助", "目的");
+        hanoi(N, stacks, 0, 1, 2);
     }
 
-    private static void hanoi(int n, String src, String aux, String dest) {
-        if (n==1)
-            System.out.printf("從%s搬一個碟子到%s\n", src, dest);
-        else {
-            hanoi(n-1, src, dest, aux);
-            System.out.printf("從%s搬一個碟子到%s\n", src, dest);
-            hanoi(n-1, aux, src, dest);
+    private static void hanoi(int n, Stack<Integer>[] stacks, int src, int aux, int dest) {
+        if (n>=1) {
+            hanoi(n-1, stacks, src, dest, aux);
+            int v = stacks[src].pop();
+            stacks[dest].push(v);
+            print(stacks);
+//            System.out.printf("從%s搬一個碟子到%s\n", src, dest);
+            hanoi(n-1, stacks, aux, src, dest);
         }
     }
 
@@ -39,5 +40,6 @@ public class MyHanoiStack {
         for (int i = 0; i < stacks.length; i++) {
             System.out.println(stacks[i]);            
         }
+        System.out.println("-----------------------------------");
     }
 }
