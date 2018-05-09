@@ -1,5 +1,7 @@
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -14,7 +16,15 @@ public class MyHashMap {
     }
 
     private static void print(HashMap<String, Integer> hm) {
-        for (String e : hm.keySet()) {
+        String [] chars = hm.keySet().toArray(new String[0]);
+        Arrays.sort(chars);
+        System.out.println("依字元排序:");
+        for (String e : chars) {
+            System.out.printf("%s=>%d\n", e, hm.get(e));
+        }
+        System.out.println("依次數排序:");
+        Map<String, Integer> newhm = MapUtil.sortByValue(hm);
+        for (String e : newhm.keySet()) {
             System.out.printf("%s=>%d\n", e, hm.get(e));
         }
     }
