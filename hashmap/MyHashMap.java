@@ -25,11 +25,12 @@ public class MyHashMap {
             System.out.print("Please input a word (byebye to exit): ");
             String line = scan.nextLine();
             if (line.equals("byebye")) break;
-            if (hm.containsKey(line)) {
-                int cnt = hm.get(line);
-                hm.put(line, cnt+1);
+            String c = line.substring(0,1);
+            if (hm.containsKey(c)) {
+                int cnt = hm.get(c);
+                hm.put(c, cnt+1);
             } else
-                hm.put(line, 1);
+                hm.put(c, 1);
         }
     }
 }
