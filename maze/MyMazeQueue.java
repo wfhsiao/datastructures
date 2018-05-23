@@ -80,16 +80,9 @@ public class MyMazeQueue {
                             break;
                     case 9: System.out.print("¢¸");
                             break;
-                    case 10: System.out.print("10");
+                    default: System.out.print(maze[i][j]);
                             break;
-                    case 11: System.out.print("11");
-                            break;
-                    case 12: System.out.print("12");
-                            break;
-                    case 13: System.out.print("13");
-                            break;
-                    case 14: System.out.print("14");
-                            break;
+                    
                 }
             }            
             System.out.println();
