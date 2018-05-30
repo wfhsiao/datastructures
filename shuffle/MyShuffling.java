@@ -12,8 +12,9 @@ public class MyShuffling {
         print(a);
 //        shuffle1(a);
 //        print(a);
-        shuffle2(a);
+        shuffle3(a);
         print(a);
+        check(a);
     }
 
     private static void init(int[] a) {
@@ -54,5 +55,25 @@ public class MyShuffling {
         int tmp = a[i];
         a[i] = a[x];
         a[x] = tmp;
+    }
+
+    private static void check(int[] a) {
+        int cnt = 0;
+        for (int i = 0; i < a.length; i++) {
+            if ( a[i] == i) {
+                System.out.println(i);
+                cnt++;
+            }            
+        }
+        System.out.printf("共%d張沒動到\n", cnt);
+    }
+
+    private static void shuffle3(int[] a) {
+        Random r = new Random();
+        for (int i = 1000; i >=1 ; i--) {
+            int x = r.nextInt(a.length);
+            int y = r.nextInt(a.length);
+            swap(a, y, x);
+        }
     }
 }
