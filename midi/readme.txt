@@ -1,0 +1,1 @@
+midi in text mode
