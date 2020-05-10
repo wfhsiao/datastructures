@@ -36,7 +36,7 @@ class Queue:
     def DeQueue(self): 
         
         if self.isEmpty(): 
-            return
+            return None
         temp = self.front 
         self.front = temp.next
 

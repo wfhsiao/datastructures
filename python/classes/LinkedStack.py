@@ -25,7 +25,7 @@ class Stack:
       
     def pop(self): 
         if (self.isEmpty()): 
-            return float("-inf") 
+            return None      # instead of float("-inf") 
         temp = self.root  
         self.root = self.root.next 
         popped = temp.data 
@@ -33,7 +33,7 @@ class Stack:
       
     def peek(self): 
         if self.isEmpty(): 
-            return float("-inf") 
+            return None      # instead of float("-inf") 
         return self.root.data 
   
     def __str__(self):
