@@ -22,7 +22,7 @@ class Queue:
         return self.front == None
     
     # Method to add an item to the queue 
-    def EnQueue(self, item): 
+    def enQueue(self, item): 
         temp = Node(item) 
         
         if self.rear == None: 
@@ -33,7 +33,7 @@ class Queue:
         return self
 
     # Method to remove an item from queue 
-    def DeQueue(self): 
+    def deQueue(self): 
         
         if self.isEmpty(): 
             return None
