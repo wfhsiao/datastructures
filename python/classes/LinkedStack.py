@@ -37,17 +37,13 @@ class Stack:
         return self.root.data 
   
     def __str__(self):
-        res=''
-        temp = self.root 
-        first=True
-        while temp: 
-            if first: first=False
-            else: res+=', '
-            res += f'{temp.data}'
-            temp = temp.next
-            #if temp: res+=', '
-        res += ']'
-        return res
+        p = self.root
+        res=[]
+        while p:
+            res.append(f'{p.data}')
+            p = p.next
+        res.reverse()
+        return '['+' '.join(res)
 
     def __repr__(self):
         return self.__str__()
