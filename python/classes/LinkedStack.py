@@ -26,7 +26,7 @@ class Stack:
 
     def pop(self):
         if self.is_empty():
-            return None   #raise StackEmptyError("Cannot pop from an empty stack")
+            return None
         temp = self.root
         self.root = self.root.next
         popped = temp.data
@@ -34,7 +34,7 @@ class Stack:
 
     def peek(self):
         if self.is_empty():
-            return None   #raise StackEmptyError("Cannot peek into an empty stack")
+            return None
         return self.root.data
         
     def __repr__(self):
