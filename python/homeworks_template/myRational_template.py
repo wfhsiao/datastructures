@@ -6,7 +6,7 @@ Created on Mon Apr 18 11:15:49 2022
 mySum(n)方法：計算總和並印出結果，請留意輸出格式，當只有1項, 2項, 3項, 及4項以上的輸出都是評分的項目。
 
 pi 的分數表示法如下(移至連結上並按Ctrl+滑鼠左鍵)：
-https://github.com/wfhsiao/datastructures/blob/master/data/pi2.png
+https://github.com/wfhsiao/datastructures/raw/master/data/pi2.png
 
 執行範例如下(本題測試n=1500，同學應由小的n來測試正確性)：
 mySum(0)=3, 逼近值為:3.0
