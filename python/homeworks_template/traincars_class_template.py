@@ -108,13 +108,23 @@ class TrainCars:
     # print out all railstacks
     def push2Buffer(self, car, railstacks):
         idx2cars, cars2idx = self.idx2cars, self.cars2idx
+        feasible=[]
+        for i in range(len(railstacks)):
+            if railstacks[i].isEmpty(): # set a large number for an empty stack
+               feasible.append((i, 1000))
+            elif cars2idx[railstacks[i].peek()] > car:
+               feasible.append((i, railstacks[i].peek()))
 
         # Student task: implement the logic to find the best railstack to push the current car
         # Hint: loop through railstacks and find the one with the smallest top car larger than the current car
+        if not feasible:  # railstacks are empty or current car_no is too large
+           s = Stack()
+           
+           # ...
+           
+        else:
+            min_i, _ = min(feasible, key=lambda x: x[1])
         # If there's no such railstack, create a new one
-
-
-
 
 
 
