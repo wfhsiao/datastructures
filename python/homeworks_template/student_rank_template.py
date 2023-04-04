@@ -101,7 +101,7 @@ def setRanks(students):
                    
      return sorted_students
  
-def print_students_nearest_rank(students, target_rank):
+def find_students_nearest_rank(students, target_rank):
      ranked_students = sorted(students, key=lambda x: x.getRank())
      nearest_rank = -1
 
@@ -122,7 +122,7 @@ def show_result(students, target_rank):
     
     print(f'顯示查詢名次:{target_rank}')
     ranked_students = sorted(students, key=lambda x: x.getRank())    
-    nearest_rank= print_students_nearest_rank(ranked_students, target_rank)
+    nearest_rank= find_students_nearest_rank(ranked_students, target_rank)
 
     if not nearest_rank:
         print('無此名次!')
