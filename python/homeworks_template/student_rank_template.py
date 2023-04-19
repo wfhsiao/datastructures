@@ -109,7 +109,7 @@ def find_students_nearest_rank(students, target_rank):
 
 
 
-    if target_rank < 0 or target_rank > len(ranked_students):
+    if target_rank <= 0 or target_rank > len(ranked_students):
         return None #print('無此名次!')
     else:
         if nearest_rank == -1:
